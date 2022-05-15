@@ -212,7 +212,7 @@ public final class VideoCodec {
                     height: height,
                     codecType: kCMVideoCodecType_H264,
                     encoderSpecification: nil,
-                    imageBufferAttributes: attributes as CFDictionary?,
+                    imageBufferAttributes: nil,
                     compressedDataAllocator: nil,
                     outputCallback: callback,
                     refcon: Unmanaged.passUnretained(self).toOpaque(),
