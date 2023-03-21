@@ -554,6 +554,7 @@
 		BCFB355A24FA40DD00DC5108 /* PlaybackContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB355924FA40DD00DC5108 /* PlaybackContainerViewController.swift */; };
 		BCFB355C24FAB29B00DC5108 /* HKPictureInPictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB355624FA37F700DC5108 /* HKPictureInPictureController.swift */; };
 		BCFB355E24FAB2D200DC5108 /* HKPictureInPictureControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB355D24FAB2D200DC5108 /* HKPictureInPictureControllerImpl.swift */; };
+		E06001D62860892F0066D0F1 /* CustomBufferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06001D52860892F0066D0F1 /* CustomBufferView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -922,6 +923,7 @@
 		BCFB355624FA37F700DC5108 /* HKPictureInPictureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKPictureInPictureController.swift; sourceTree = "<group>"; };
 		BCFB355924FA40DD00DC5108 /* PlaybackContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackContainerViewController.swift; sourceTree = "<group>"; };
 		BCFB355D24FAB2D200DC5108 /* HKPictureInPictureControllerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKPictureInPictureControllerImpl.swift; sourceTree = "<group>"; };
+		E06001D52860892F0066D0F1 /* CustomBufferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBufferView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1339,6 +1341,7 @@
 				29D3D4D41ED04E7100DD4AA6 /* DeviceUtil+Extenstion.swift */,
 				299F7E3B1CD71A97001E7272 /* HaishinKit.h */,
 				299B13261D3B751400A1E8F5 /* HKView.swift */,
+				E06001D52860892F0066D0F1 /* CustomBufferView.swift */,
 				299F7E3A1CD71A97001E7272 /* Info.plist */,
 				29D3D4D01ED04D1200DD4AA6 /* NetStream+Extension.swift */,
 				299B131C1D35272D00A1E8F5 /* ScreenCaptureSession.swift */,
@@ -2052,6 +2055,7 @@
 				BC566F6E25D2ECC500573C4C /* HLSService.swift in Sources */,
 				BCC1A6EF2645B5F800661156 /* MP4PixelAspectRatioBox.swift in Sources */,
 				29EA87EA1E79A3B70043A5F8 /* CMBlockBuffer+Extension.swift in Sources */,
+				E06001D62860892F0066D0F1 /* CustomBufferView.swift in Sources */,
 				BCA97C12263D8C850027213C /* MP4FullBox.swift in Sources */,
 				293B42E92340B4840086F973 /* RTMPObjectEncoding.swift in Sources */,
 				2976A47E1D48C5C700B53EF2 /* AVRecorder.swift in Sources */,
