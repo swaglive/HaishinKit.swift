@@ -158,6 +158,13 @@ public struct VideoCodecSettings: Codable {
                 "ScalingMode": scalingMode.rawValue
             ] as NSObject)
         ])
+        if bitRateMode == .average {
+            let limits = [
+                Double(bitRate) / 8,
+                Double(1.0)
+            ]
+            options.insert(.init(key: .dataRateLimits, value: limits as NSArray))
+        }
         #if os(macOS)
         if isHardwareEncoderEnabled {
             options.insert(.init(key: .encoderID, value: format.encoderID))
