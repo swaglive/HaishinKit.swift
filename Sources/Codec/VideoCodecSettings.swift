@@ -99,6 +99,8 @@ public struct VideoCodecSettings: Codable {
     public var isHardwareEncoderEnabled = true
 
     var format: Format = .h264
+    
+    var dataRateLimits: [Double] { [Double(bitRate) / 8, Double(1.0)] }
 
     /// Creates a new VideoCodecSettings instance.
     public init(
@@ -136,8 +138,14 @@ public struct VideoCodecSettings: Codable {
     }
 
     func apply(_ codec: VideoCodec, rhs: VideoCodecSettings) {
-        if bitRate != rhs.bitRate {
-            let option = VTSessionOption(key: bitRateMode.key, value: NSNumber(value: bitRate))
+        guard bitRate != rhs.bitRate else {
+            return
+        }
+        var options: [VTSessionOption] = [VTSessionOption(key: bitRateMode.key, value: NSNumber(value: bitRate))]
+        if codec.settings.bitRateMode == .average {
+            options.append(.init(key: .dataRateLimits, value: dataRateLimits as NSArray))
+        }
+        for option in options {
             if let status = codec.session?.setOption(option), status != noErr {
                 codec.delegate?.videoCodec(codec, errorOccurred: .failedToSetOption(status: status, option: option))
             }
@@ -159,11 +167,7 @@ public struct VideoCodecSettings: Codable {
             ] as NSObject)
         ])
         if bitRateMode == .average {
-            let limits = [
-                Double(bitRate) / 8,
-                Double(1.0)
-            ]
-            options.insert(.init(key: .dataRateLimits, value: limits as NSArray))
+            options.insert(.init(key: .dataRateLimits, value: dataRateLimits as NSArray))
         }
         #if os(macOS)
         if isHardwareEncoderEnabled {
