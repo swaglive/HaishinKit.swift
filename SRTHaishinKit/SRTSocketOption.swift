@@ -365,7 +365,7 @@ public enum SRTSocketOption: String, Sendable {
     }
 
     func setOption(_ socket: SRTSOCKET, value: Any) -> Bool {
-        guard let data = data(value) else {
+        guard let data = OptionsParser.parse(value, for: self) else {
             return false
         }
         let result: Int32 = data.withUnsafeBytes { pointer in

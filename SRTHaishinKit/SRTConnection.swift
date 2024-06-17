@@ -94,6 +94,13 @@ public final class SRTConnection: NSObject {
 extension SRTConnection: SRTSocketDelegate {
     // MARK: SRTSocketDelegate
     func socket(_ socket: SRTSocket<SRTConnection>, status: SRT_SOCKSTATUS) {
+        if let socketStatus = SocketStatus(srtStatus: status) {
+            NotificationCenter.default.post(
+                name: SRTNotificationNames.connectionStatusNotification,
+                object: self,
+                userInfo: [SRTNotificationProperties.status: socketStatus]
+            )
+        }
         connected = socket.status == SRTS_CONNECTED
     }
 
