@@ -27,7 +27,8 @@ Pod::Spec.new do |s|
   s.visionos.deployment_target = "1.0"
   s.visionos.source_files = "Platforms/*.{h,swift}"
 
-  s.source_files = "Sources/**/*.swift"
+  s.source_files = ["Sources/**/*.swift", "SRTHaishinKit/**/*.swift"]
   s.dependency 'Logboard', '~> 2.5.0'
+  s.vendored_frameworks = "Vendor/SRT/libsrt.xcframework"
 
 end
